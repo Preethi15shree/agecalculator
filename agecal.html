@@ -1,53 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age Calculator</title>
-    <!--Google Font-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+   
     <!--Stylesheet-->
     <link rel="stylesheet" href="style.css">
     <style>
-            h1{
-            margin: 30px;
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #00ff152f;
+            background-image: url(age);
+            background-repeat: no-repeat;
+            background-size: cover;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            margin-left: 400px;
+            height: 50vh;
+        }
+        h1 {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .container {
+            padding: 30px 25px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+        }
+        .inputs-wrapper {
+            margin-bottom: 20px;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #ffffff;
+            color: #08080899;
+            font-weight: 500;
+            border-radius: 5px;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ffc7c7;
+        }
+        .outputs-wrapper {
+            display: flex;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .outputs-wrapper.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .outputs-wrapper div {
+            background-color: #ffffff;
+            border-radius: 5px;  
+            padding: 20px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.758);
+            width: 100px;
+            text-align: center;
+            margin: 10px;
+        }
+        span {
+            font-size: 30px;
+            font-weight: 500;
+        }
+        p {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 400;
+        }
+        @media (max-width: 768px) {
+            .outputs-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .outputs-wrapper div {
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 24px;
+            }
+            p {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Age Difference Calculator</h1>
+    <h1>Age Calculator</h1>
 
     <div class="container">
         <div class="inputs-wrapper">
-
             <input type="date" id="date-input">
             <button onclick="ageCalculate()">Calculate</button>
         </div>
         <div class="outputs-wrapper">
             <div>
-                <span id="years">
-                    -
-                </span>
-                <p>
-                    Years
-                </p>
+                <span id="years">-</span>
+                <p>Years</p>
             </div>
             <div>
-                <span id="months">
-                    -
-                </span>
-                <p>
-                   Months
-                </p>
+                <span id="months">-</span>
+                <p>Months</p>
             </div>
             <div>
-                <span id="days">
-                    -
-                </span>
-                <p>
-                    Days
-                </p>
+                <span id="days">-</span>
+                <p>Days</p>
             </div>
         </div>
     </div>
