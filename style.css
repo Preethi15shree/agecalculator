@@ -1,0 +1,130 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 200px;
+    background-color: #00ff152f;
+    background-image: url(age);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    width: 40%;
+    min-width: 450px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 60%;
+    padding: 50px 30px;
+}
+.container * {
+    font-family: "Poppins", sans-serif;
+    border: none;
+    outline: none;
+}
+.inputs-wrapper {
+    background-color: #0661ff98;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 15px 20px rgb(0, 0, 0);
+    margin-bottom: 50px;
+}
+input,
+button {
+    height: 50px;
+    background-color: #ffffff;
+    color: #08080899;
+    font-weight: 500;
+    border-radius: 5px;
+}
+input {
+    width: 100%;
+    padding: 0 20px;
+    font-size: 14px;
+}
+button {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #000000;
+}
+button:hover {
+    background-color: #ffc7c7;
+}
+.outputs-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.outputs-wrapper.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.outputs-wrapper div {
+    height: 100px;
+    width: 100px;
+    background-color: #0661ff98;
+    border-radius: 5px;
+    color: #000000;
+    display: grid;
+    place-items: center;
+    padding: 20px 0;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.758);
+    transition: transform 0.3s ease-in-out;
+}
+.outputs-wrapper div:hover {
+    transform: scale(1.1);
+}
+span {
+    font-size: 30px;
+    font-weight: 500;
+}
+p {
+    font-size: 14px;
+    color: #000000;
+    font-weight: 400;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        min-width: 300px;
+        top: 50%;
+        padding: 20px 15px;
+    }
+    .inputs-wrapper {
+        padding: 20px 15px;
+    }
+    input,
+    button {
+        height: 45px;
+        font-size: 13px;
+    }
+    button {
+        margin-top: 10px;
+    }
+    .outputs-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .outputs-wrapper div {
+        height: 80px;
+        width: 80px;
+        margin-bottom: 10px;
+    }
+    span {
+        font-size: 24px;
+    }
+    p {
+        font-size: 12px;
+    }
+}
